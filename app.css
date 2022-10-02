@@ -18,3 +18,22 @@
   position: absolute;
   bottom: 8px;
 }
+
+.new-meme-hover {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+
+.new-meme-hover:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.new-meme {
+  width: 300px;
+  height: 300px;
+}
+.new-meme img {
+  width: 300px;
+  height: 300px;
+}
