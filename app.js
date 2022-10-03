@@ -33,6 +33,8 @@ button.addEventListener("click", function (e) {
     counter++;
     container.classList.add("new-meme");
     hoverContainer.classList.add("new-meme-hover");
+    topContainer.classList.add("new-meme-top");
+    bottomContainer.classList.add("new-meme-bottom");
     container.appendChild(hoverContainer);
     container.appendChild(topContainer);
     container.appendChild(newMeme);
@@ -44,3 +46,6 @@ button.addEventListener("click", function (e) {
     botInput.value = "";
   }
 });
+
+// topContainer.classList.add("new-meme-top");
+// bottomContainer.classList.add("new-meme-bottom");
