@@ -46,6 +46,7 @@ function divsCharacters(charactersArray) {
   for (let character of charactersArray) {
     const newDiv = document.createElement("div");
     newDiv.classList.add(character);
+    newDiv.style.backgroundSize = "100px";
     newDiv.addEventListener("click", cardClick);
     gameContainer.append(newDiv);
   }
@@ -55,8 +56,9 @@ function cardClick(e) {
   if (e.target.classList.contains("flipped")) return;
 
   let currentCard = e.target;
-  currentCard.style.backgroundColor = currentCard.classList[0];
-
+  currentCard.style.backgroundImage = "url(" + currentCard.classList[0] + ")";
+  console.log(currentCard.style.backgroundImage);
+  console.log(currentCard.classList[0]);
   if (!card1 || !card2) {
     currentCard.classList.add("flipped");
     card1 = card1 || currentCard;
@@ -78,8 +80,8 @@ function cardClick(e) {
       noClicking = false;
     } else {
       setTimeout(function () {
-        card1.style.backgroundColor = "";
-        card2.style.backgroundColor = "";
+        card1.style.backgroundImage = "";
+        card2.style.backgroundImage = "";
         card1.classList.remove("flipped");
         card2.classList.remove("flipped");
         card1 = null;
@@ -92,11 +94,12 @@ function cardClick(e) {
   if (cardsFlipped === characters.length) alert("game over!");
 }
 divsCharacters(shuffledCharacters);
-function e() {
-  const imageContainer = document.createElement("div");
-  const newImage = document.createElement("img");
-  newImage.src = characters[0];
-  newImage.classList.add("card");
-  imageContainer.appendChild(newImage);
-  gameContainer.appendChild(imageContainer);
-}
+
+// function e() {
+//   const imageContainer = document.createElement("div");
+//   const newImage = document.createElement("img");
+//   newImage.src = characters[0];
+//   newImage.classList.add("card");
+//   imageContainer.appendChild(newImage);
+//   gameContainer.appendChild(imageContainer);
+// }
