@@ -1,0 +1,14 @@
+
+Branching Exercise
+1.
+    git branch branch_name
+    git checkout branch_name
+        or git checkout -b
+2.
+    fast forward only works if the master branch or original brnach has no commits
+3.
+    git checkout branch_name
+4.
+    git branch -D
+5.
+    if there are commits on the current branch and file used to branch off.
