@@ -29,6 +29,7 @@ function onlyEvenValues(arr) {
       newArr.push(val);
     }
   });
+  return newArr;
 }
 
 /*
@@ -180,11 +181,9 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-  return arr.filter(
-    function (val) {
-      return val[key] === searchValue;
-    }[0]
-  );
+  return arr.filter(function (val) {
+    return val[key] === searchValue;
+  })[0];
 }
 
 /*
