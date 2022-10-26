@@ -1,0 +1,26 @@
+
+
+ES5 Global Constants
+
+Question:
+
+var PI = 3.14;
+PI = 42; // stop me from doing this!
+
+Solution:
+
+const PI = 3.14;
+PI = 42; // will bring  up an error
+
+
+What is the difference between var and let?
+    - var can be redeclared and reassigned but let can only be reassigned.
+
+What is the difference between var and const?
+    - var can be redeclared and reassigned but const cannot do either.
+
+What is the difference between let and const?
+    - let can be reassigned but const cannot.
+
+What is hoisting?
+    - Hoisting is when you try to declare a variable without initalzing it first, the variable is declared first before the initalzation. It will result in an error with const and let, but with var it will return an undefined then the value of the variable.
