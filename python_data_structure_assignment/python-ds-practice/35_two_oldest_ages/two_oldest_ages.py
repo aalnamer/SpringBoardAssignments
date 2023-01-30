@@ -14,6 +14,11 @@ def two_oldest_ages(ages):
         (2, 5)
     """
 
+    uniq_ages = set(ages)
+    oldest = sorted(uniq_ages)[-2:]
+    return tuple(oldest)
+
+
     # NOTE: don't worry about an optimized runtime here; it's fine if
     # you have a runtime worse than O(n)
 
