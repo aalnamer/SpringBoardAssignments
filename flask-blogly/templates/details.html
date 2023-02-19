@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{users.last_name}}</title>
+  </head>
+  <body>
+    <h1>{{users.first_name}} {{users.last_name}}</h1>
+    <ul>
+      <li>ID: {{users.id}}</li>
+      <li>First Name: {{users.first_name}}</li>
+      <li>Last Name:{{users.last_name}}</li>
+      <img class = "resize" src="{{users.image_url}}" />
+    </ul>
+
+
+    <p>
+      <h2> Edit User! </h2>
+      <form action="/users/{{users.id}}/edit" method="POST">
+      <input type="text" name="first_name" placeholder="First Name" />
+
+
+      <input type="text" name="last_name" placeholder="Last Name" />
+
+
+      <input type="url" name="image_url" placeholder="Image URL" />
+       
+      <button>Edit User</button></p>
+
+
+      <form action="/users/{{users.id}}/delete" method="POST">
+      <h2> Delete User</h2>
+      <button> Delete </button>
+      </form>
+
+  <p><a href="/">Go Back</a></p>
+  </body>
+</html>
