@@ -14,27 +14,41 @@
       <li>Last Name:{{users.last_name}}</li>
       <img class = "resize" src="{{users.image_url}}" />
     </ul>
+<p>
+    <h2> Posts </h2>
+  {% for post in posts %}
+    <ul>
+      <a href="/posts/{{post.id}}">{{post.title}}</a>
+    </ul>
+  {% endfor %}
+  <form action = "/users/{{users.id}}/new-post" method = 'POST'>
+    <button>Add Post</button>
+  </form>
 
+
+
+
+</p>
 
     <p>
       <h2> Edit User! </h2>
       <form action="/users/{{users.id}}/edit" method="POST">
       <input type="text" name="first_name" placeholder="First Name" />
-
-
       <input type="text" name="last_name" placeholder="Last Name" />
-
-
       <input type="url" name="image_url" placeholder="Image URL" />
-       
-      <button>Edit User</button></p>
-
+      <button>Edit User</button>
+    
+    </p>
 
       <form action="/users/{{users.id}}/delete" method="POST">
       <h2> Delete User</h2>
       <button> Delete </button>
       </form>
+  
+  <p> 
+    <a href="/">Go Back</a>
+  </p>  
 
-  <p><a href="/">Go Back</a></p>
+
   </body>
 </html>
