@@ -16,6 +16,21 @@ CREATE TABLE posts (
   title  TEXT NOT NULL,
   content TEXT NOT NULL,
   created_at TEXT,
-  user_id  INTEGER REFERENCES Users ON DELETE CASCADE
+  user_id  INTEGER REFERENCES users ON DELETE CASCADE
 );
 
+CREATE TABLE tags(
+
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL
+);
+
+CREATE TABLE posts_tags(
+  post_id SERIAL PRIMARY KEY REFERENCES posts ON DELETE SET NULL ,
+  tag_id SERIAL 
+);
+
+INSERT INTO users (first_name, last_name) VALUES ('John', 'Smith');
+INSERT INTO posts(title,content,user_id) VALUES ('sample 1','sample 2',1);
+INSERT INTO tags (name) VALUES ('Fun');
+INSERT INTO posts_tags(post_id,tag_id) VALUES (1,1);

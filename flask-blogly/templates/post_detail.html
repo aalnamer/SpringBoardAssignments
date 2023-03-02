@@ -24,11 +24,34 @@
     <form action="/posts/{{posts.id}}/delete" method="POST">
       <h2> Delete Post </h2>
       <button> Delete </button>
-      </form>
+    </form>
+    {% if posts.tags %}
+    <p>
+      <b>Tags:</b>
+      {% for tag in posts.tags %}
+      <a href="/tags/{{ tag.id }}"><i class="badge badge-primary">{{ tag.name }}</i></a>
+      {% endfor %}
+    </p>
+    {% endif %}
+    
+    <form method = 'POST'>
+      <button class="btn btn-outline-primary"
+              formmethod="GET"
+              formaction="/users/{{ posts.user_id }}">Cancel
+      </button>
+      <button class="btn btn-primary"
+              formmethod="GET"
+              formaction="/posts/{{ posts.id }}/edit">Edit
+      </button>
+    </form>
+    
 
 
     <p>
       <a href="/users/{{posts.user.id}}">Go Back</a>
     </p>
+
+
+
   </body>
 </html>
